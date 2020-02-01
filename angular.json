@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/icomoon.css",
+              "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +95,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/icomoon.css",
+              "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []

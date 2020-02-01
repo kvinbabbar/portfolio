@@ -1,0 +1,30 @@
+<aside id="portfolio-aside" role="complementary" class="border ">
+    <div class="text-center">
+        <div class="author-img" style="background-image: url(../assets/img/about.jpg);"></div>
+        <h1 id="portfolio-logo"><a routerLink="/about">Kuldeep</a></h1>
+        <span class="position"><a href="javascript:void(0);">UI Developer</a> in Noida</span>
+    </div>
+    <nav id="portfolio-main-menu" role="navigation" class="navbar">
+        <div id="navbar" class="collapse">
+            <ul>
+                <li><a routerLink="/about" (click)="setTitle('About')" routerLinkActive="active">About</a></li>
+                <li><a routerLink="/skills" (click)="setTitle('Skills')" routerLinkActive="active">Skills</a></li>
+                <li><a routerLink="/education" (click)="setTitle('Education')" routerLinkActive="active">Education</a></li>
+                <li><a routerLink="/experience" (click)="setTitle('Experience')" routerLinkActive="active">Experience</a></li>
+                <li><a routerLink="/work" (click)="setTitle('Work')" routerLinkActive="active">Work</a></li>
+                <li><a routerLink="/contact" (click)="setTitle('Contact')" routerLinkActive="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="portfolio-footer">
+        <ul>
+            <li><a href="https://www.facebook.com/itskvin" target="_blank"><i class="icon-facebook2"></i></a></li>
+            <li><a href="https://twitter.com/kvinbabbar" target="_blank"><i class="icon-twitter2"></i></a></li>
+            <li><a href="https://www.instagram.com/kvinbabbar/" target="_blank"><i class="icon-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/itskvin/" target="_blank"><i class="icon-linkedin2"></i></a></li>
+            <li><a href="https://github.com/kvinbabbar" target="_blank"><i class="icon-github"></i></a></li>
+        </ul>
+    </div>
+
+</aside>
