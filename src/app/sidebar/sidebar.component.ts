@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SetTitleService } from '../services/set-title.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,14 +7,10 @@ import { SetTitleService } from '../services/set-title.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private titleService: SetTitleService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  setTitle(title: string) {
-    const newTitle = title + ' | Portfolio'
-    this.titleService.setTitle(newTitle);
-  }
 
 }
