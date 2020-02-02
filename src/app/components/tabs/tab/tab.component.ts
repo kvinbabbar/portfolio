@@ -18,7 +18,6 @@ export class TabComponent implements AfterViewInit {
     const head = this.panelHead.nativeElement;
     head.querySelector('a').classList.toggle('collapsed');
     const sibling = head.nextElementSibling;
-    console.log(sibling, sibling.scrollHeight, sibling.style.maxHeight);
     if(sibling.style.maxHeight) {
       sibling.style.maxHeight = null;
     } else {
