@@ -380,6 +380,14 @@ body {
   @media screen and(max-width: $screen-sm) {
     padding: 0;
   }
+  .panel-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;
+    .panel-body {
+      margin-bottom: 5px;
+    }
+  }
 }
 .no-gutters {
   margin: 0;
@@ -470,6 +478,7 @@ body {
 //PANEL
 .fancy-collapse-panel .panel-default > .panel-heading {
   padding: 0;
+  cursor: pointer;
 }
 .panel-heading a {
   padding: 20px 25px;

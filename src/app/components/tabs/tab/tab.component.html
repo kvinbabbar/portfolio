@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+    <div class="panel-heading" #panelHead (click)="togglePanels()">
+        <h4 class="panel-title">
+            <a class="collapsed">{{panelHeading}}</a>
+        </h4>
+    </div>
+    <div class="panel-collapse">
+        <div class="panel-body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
