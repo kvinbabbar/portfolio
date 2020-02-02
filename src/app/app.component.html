@@ -1,3 +1,7 @@
+<div class="loader" *ngIf="loading">
+	<div class="bar"></div>
+</div>
+<button (click)="loading = !loading">click</button>
 <div id="portfolio-page">
 	<div class="container-wrap">
 		<a href="#" class="js-portfolio-nav-toggle portfolio-nav-toggle"><i></i></a>
