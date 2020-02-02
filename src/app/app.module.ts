@@ -12,6 +12,8 @@ import { WorkComponent } from './work/work.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { TabComponent } from './components/tabs/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
     WorkComponent,
     ContactComponent,
     SidebarComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
+    TabsComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,
