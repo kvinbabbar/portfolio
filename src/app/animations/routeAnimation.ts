@@ -16,7 +16,7 @@ export const routeAnimation = trigger('slideUp', [
                 top: 0,
                 left: 0
             })
-        ]),
+        ], {optional: true}),
         query(
             ':enter',
             [style({ top: '100%' })],
