@@ -349,6 +349,7 @@ figure {
 #portfolio-main {
   width: calc(100% - 300px);
   float: right;
+  min-height: 100vh;
   @include transition(0.5s);
   @media screen and (max-width: $screen-sm) {
     width: 100%;
@@ -652,6 +653,7 @@ body {
   -ms-filter: alpha(opacity=40);
   filter: alpha(opacity=40);
   font-size: 16px;
+  margin-left: 10px;
 }
 
 //SERVICES----------------------
@@ -1638,4 +1640,9 @@ body {
   .js & {
     opacity: 0;
   }
+}
+
+// router animation
+.portfolio-animate {
+  min-height: 100vh;
 }

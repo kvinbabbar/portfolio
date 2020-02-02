@@ -3,7 +3,9 @@
 		<a href="#" class="js-portfolio-nav-toggle portfolio-nav-toggle"><i></i></a>
 		<app-sidebar></app-sidebar>
 		<div id="portfolio-main">
-			<router-outlet></router-outlet>
+			<div class="portfolio-animate" [@slideUp]="o.isActivated ? o.activatedRoute : ''">
+				<router-outlet #o="outlet"></router-outlet>
+			</div>
 		</div><!-- end:portfolio-main -->
 	</div><!-- end:container-wrap -->
 </div><!-- end:portfolio-page -->

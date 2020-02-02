@@ -3,11 +3,13 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import { SetTitleService } from './services/set-title.service';
 import { map, filter } from 'rxjs/operators';
+import { routeAnimation } from './animations/routeAnimation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [routeAnimation]
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';
