@@ -6,7 +6,7 @@
 		<a href="#" class="js-portfolio-nav-toggle portfolio-nav-toggle"><i></i></a>
 		<app-sidebar></app-sidebar>
 		<div id="portfolio-main">
-			<div class="portfolio-animate" [@slideUp]="o.isActivated ? o.activatedRoute : ''">
+			<div class="portfolio-animate" [@slideUp]="prepareRouteTransition(o)">
 				<router-outlet #o="outlet"></router-outlet>
 			</div>
 		</div><!-- end:portfolio-main -->

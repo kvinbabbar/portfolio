@@ -8,6 +8,7 @@ import {
   NavigationEnd, 
   NavigationCancel, 
   NavigationError, 
+  RouterOutlet
   } from '@angular/router';
 import { SetTitleService } from './services/set-title.service';
 import { map, filter } from 'rxjs/operators';
@@ -78,5 +79,9 @@ export class AppComponent implements OnInit {
     if(event instanceof NavigationError) {
       this.loading = false;
     }
+  }
+
+  prepareRouteTransition(o: RouterOutlet) {
+    return o.isActivated ? o.activatedRoute : '';
   }
 }

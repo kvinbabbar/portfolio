@@ -1,0 +1,8 @@
+<div class="progress-wrap">
+    <h3>{{title}}</h3>
+    <div class="progress" [@progressBarAnimationTrigger]>
+        <div class="progress-bar" [ngClass]="color" [ngStyle]="{'width.%': progress}">
+            <span>{{progress}}%</span>
+        </div>
+    </div>
+</div>

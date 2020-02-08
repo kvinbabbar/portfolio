@@ -3,11 +3,13 @@ import {
     transition,
     animate,
     style,
-    query
+    query,
+    animateChild,
+    group
 } from '@angular/animations';
 
 export const routeAnimation = trigger('slideUp', [
-    transition('* => *', [
+    transition('* <=> *', [
         style({ position: 'relative' }),
         query(':enter, :leave', [
             style({
@@ -22,23 +24,23 @@ export const routeAnimation = trigger('slideUp', [
             [style({ top: '100%' })],
             { optional: true }
         ),
-        query(
-            ':leave',
-            [style({
-                top: '0%'
-            }), animate('.3s', style({
-                top: '-100%'
-            }))],
-            { optional: true }
-        ),
-        query(
-            ':enter',
-            [style({
-                top: '100%'
-            }), animate('.3s', style({
-                top: '0'
-            }))],
-            { optional: true }
-        )
+        query(':leave', animateChild(), { optional: true }),
+        group([
+            query(
+                ':leave',
+                [animate('.3s', style({
+                    top: '-3000px'
+                }))],
+                { optional: true }
+            ),
+            query(
+                ':enter',
+                [animate('.3s', style({
+                    top: '0'
+                }))],
+                { optional: true }
+            )
+        ]),
+        query('*', animateChild(), { optional: true }),
     ])
 ]);

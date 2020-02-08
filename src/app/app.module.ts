@@ -14,6 +14,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TabComponent } from './components/tabs/tab/tab.component';
     SidebarComponent,
     PageNotfoundComponent,
     TabsComponent,
-    TabComponent
+    TabComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
