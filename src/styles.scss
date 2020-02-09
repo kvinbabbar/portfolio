@@ -1072,8 +1072,14 @@ body {
     &:first-child {
       margin-left: 0;
     }
-    a {
+    button {
       color: $brand-black;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      line-height: 1;
+      outline: none;
+      text-transform: capitalize;
       &.active {
         color: $brand-primary;
       }
