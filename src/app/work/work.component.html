@@ -16,9 +16,9 @@
             </div>
         </div>
         <div class="row" [@slideToggle]="projectTotal">
-            <div class="col-md-6" *ngFor="let project of projects">
+            <div class="col-md-6" *ngFor="let project of projects; index as i">
                 <div class="project" [ngStyle]="{'background-image': 'url('+ project.imgPath +')'}">
-                    <div class="desc">
+                    <div class="desc" (click)="previewBig(project, i)">
                         <div class="con">
                             <h3><a href="javascript:void(0);">{{project.title}}</a></h3>
                             <span>{{project.tags}}</span>
@@ -38,3 +38,30 @@
         </div>
     </div>
 </section>
+
+<div class="preview-wrapper" *ngIf="openPreview" [@previewModal]>
+    <div class="preview-content" *ngIf="currentProject; else noneProject">
+        <div class="preview-head">
+            <h4>{{currentProject.title}}</h4>
+            <a href="javascipt:void(0);" class="btn-close" (click)="closePreview()"><i class="icon-circle-cross"></i></a>
+        </div>
+        <div class="preview-body">
+            <img src="{{currentProject.imgPath}}" alt="{{currentProject.title}}">
+        </div>
+        <div class="preview-foot">
+            <div class="preview-foot-col">
+                <h4>{{slideNo}}</h4>
+            </div>
+            <div class="preview-foot-col">
+                {{currentProject.tags}}
+            </div>
+            <div class="preview-foot-col">
+                <p class="icon">
+                    <span><a href="#"><i class="icon-eye"></i> {{currentProject.views}}</a></span>
+                    <span><a href="#"><i class="icon-heart"></i> {{currentProject.likes}}</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <ng-template #noneProject><p>Something is wrong!</p></ng-template>
+</div>

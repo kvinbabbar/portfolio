@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { PROJECTS } from '../projects';
+import { Project } from '../project';
 
 import { slideToggleAnimation } from '../animations/slideToggle';
+import { previewModalAnimation } from '../animations/previewModal';
 
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss'],
-  animations: [slideToggleAnimation]
+  animations: [slideToggleAnimation, previewModalAnimation]
 })
 export class WorkComponent implements OnInit {
   _projects = [];
   selectedMenu: string;
   projectTotal: number = -1;
   workMenu = ['all', 'graphic design', 'web design', 'app design'];
+  openPreview: boolean = false;
+  currentProject: Project;
+  slideNo: number;
 
   get projects() {
     return this._projects;
   }
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
     this.filterProjects('all');
@@ -39,4 +44,17 @@ export class WorkComponent implements OnInit {
     } 
   }
 
+  previewBig(project: Project, i: number) {
+    this.currentProject = project;
+    this.slideNo = ++i;
+    this.el.nativeElement.closest('body').style.overflow = "hidden";
+    this.openPreview = true;
+
+  }
+  closePreview() {
+    this.currentProject = null;
+    this.slideNo = null;
+    this.el.nativeElement.closest('body').style.overflow = "initial";
+    this.openPreview = false;
+  }
 }
