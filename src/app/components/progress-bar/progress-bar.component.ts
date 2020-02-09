@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { progressBarAnimation } from '../../animations/progress-bar';
 
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
-  styleUrls: ['./progress-bar.component.scss'],
-  animations: [progressBarAnimation]
+  styleUrls: ['./progress-bar.component.scss']
 })
 export class ProgressBarComponent implements OnInit {
   @Input() title: string;
