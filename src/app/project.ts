@@ -1,4 +1,5 @@
 export interface Project {
+    id: number,
     keywords:string,
     imgPath: string,
     title: string,
