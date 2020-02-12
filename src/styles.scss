@@ -293,7 +293,7 @@ body {
     #portfolio-aside {
       @include translateX(0);
       width: 300px;
-      background: $brand-gray;
+      background: $brand-dark-gray;
       z-index: 999;
       position: fixed;
     }
