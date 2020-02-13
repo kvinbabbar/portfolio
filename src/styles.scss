@@ -296,11 +296,17 @@ body {
       background: $brand-dark-gray;
       z-index: 999;
       position: fixed;
+      @media (max-width: 400px) {
+        width: 260px;
+      }
     }
     #portfolio-main,
     .portfolio-nav-toggle {
       top: 0;
       @include translateX(300px);
+      @media (max-width: 400px) {
+        @include translateX(260px);
+      }
     }
   }
 }
