@@ -28,22 +28,7 @@ export class AppComponent implements OnInit {
     private setTitleService: SetTitleService,
     private titleService: Title) {
       this.router.events.subscribe((event: Event) => {
-        switch (true) {
-          case event instanceof NavigationStart: {
-            this.loading = true;
-            break;
-          }
-  
-          case event instanceof NavigationEnd:
-          case event instanceof NavigationCancel:
-          case event instanceof NavigationError: {
-            this.loading = false;
-            break;
-          }
-          default: {
-            break;
-          }
-        }
+        this.navigationInterceptor(event);
       });
     }
 
