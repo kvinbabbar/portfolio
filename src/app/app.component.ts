@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { 
   Router, 
@@ -23,11 +23,13 @@ import { routeAnimation } from './animations/routeAnimation';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   loading: boolean = false;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private setTitleService: SetTitleService,
-    private titleService: Title) {
+    private titleService: Title,
+    private el: ElementRef ) {
       this.router.events.subscribe((event: Event) => {
         this.navigationInterceptor(event);
       });
@@ -68,5 +70,9 @@ export class AppComponent implements OnInit {
 
   prepareRouteTransition(o: RouterOutlet) {
     return o.isActivated ? o.activatedRoute : '';
+  }
+
+  toggleSidebarFn() {
+    this.el.nativeElement.closest('body').classList.toggle('offcanvas');
   }
 }

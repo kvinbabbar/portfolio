@@ -7,7 +7,7 @@
       "title": "Work 01",
       "tags": "Website",
       "views": 591,
-      "likes": 43
+      "likes": 45
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "title": "Work 03",
       "tags": "Illustration",
       "views": 261,
-      "likes": 20
+      "likes": 31
     },
     {
       "id": 4,
@@ -33,7 +33,7 @@
       "imgPath": "assets/img/img-4.jpg",
       "title": "Work 04",
       "tags": "Application",
-      "views": 262,
+      "views": 263,
       "likes": 39
     },
     {

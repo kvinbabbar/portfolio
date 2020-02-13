@@ -3,7 +3,7 @@
 </div>
 <div id="portfolio-page">
 	<div class="container-wrap">
-		<a href="#" class="js-portfolio-nav-toggle portfolio-nav-toggle"><i></i></a>
+		<a href="javascript:void(0);" (click)="toggleSidebarFn()" class="js-portfolio-nav-toggle portfolio-nav-toggle"><i></i></a>
 		<app-sidebar></app-sidebar>
 		<div id="portfolio-main">
 			<div class="portfolio-animate" [@slideUp]="prepareRouteTransition(o)">
