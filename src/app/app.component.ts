@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { 
   Router, 
@@ -23,7 +23,6 @@ import { routeAnimation } from './animations/routeAnimation';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   loading: boolean = false;
-
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -74,5 +73,16 @@ export class AppComponent implements OnInit {
 
   toggleSidebarFn() {
     this.el.nativeElement.closest('body').classList.toggle('offcanvas');
+  }
+  
+  @HostListener('window:resize', ['$event']) 
+  onResize(event) {
+    const width = event.target.innerWidth;
+    const body = this.el.nativeElement.closest('body')
+    if(width > 768) {
+      if(body.classList.contains('offcanvas')) {
+        body.classList.remove('offcanvas');
+      }
+    }
   }
 }
