@@ -12,4 +12,5 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  test(){alert('hi')}
 }
