@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SendMailService } from '../services/send-mail.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,11 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  contact: CONTACT = {
+    nameField: '',
+    emailField: '',
+    subjectField: '',
+    messageField: ''
+  }
+  isSubmited: boolean = false;
+  constructor(private mailService: SendMailService) { }
 
   ngOnInit() {
   }
 
-  test(){alert('hi')}
+  onSubmit(contactForm: NgForm) {
+    this.isSubmited = true;
+    this.mailService.sendMail(this.contact).subscribe(data => {
+      contactForm.form.reset();
+      this.isSubmited = false;
+      console.log(data);
+    },
+    err => console.error(err))
+  }
+}
+
+export class CONTACT {
+    nameField: string;
+    emailField: string;
+    subjectField: string;
+    messageField: string;
 }
