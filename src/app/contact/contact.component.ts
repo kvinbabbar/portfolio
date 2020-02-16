@@ -14,6 +14,8 @@ export class ContactComponent implements OnInit {
     subjectField: '',
     messageField: ''
   }
+  msgSent: boolean = false;
+  msgNotSent: boolean = false;
   isSubmited: boolean = false;
   constructor(private mailService: SendMailService) { }
 
@@ -25,9 +27,16 @@ export class ContactComponent implements OnInit {
     this.mailService.sendMail(this.contact).subscribe(data => {
       contactForm.form.reset();
       this.isSubmited = false;
+      this.msgSent = true;
+      setTimeout(() => {this.msgSent = false}, 2000);
       console.log(data);
     },
-    err => console.error(err))
+    err => {
+      console.error(err)
+      this.msgNotSent = true;
+      this.isSubmited = false;
+      setTimeout(() => {this.msgNotSent = false}, 3000);
+    })
   }
 }
 

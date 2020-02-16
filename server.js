@@ -14,7 +14,6 @@ app.listen(3300, () => {
 app.post('/sendmail', (req, res) => {
     console.log("request came");
     let user = req.body;
-    console.log(user, user.emailField);
 
     const mailOptions = {
         from: `${user.emailField}`,
